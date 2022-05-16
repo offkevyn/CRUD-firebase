@@ -27,8 +27,7 @@ h1
     font-family: 'Zen Loop', 'Roboto Flex', sans-serif;
     font-size: 5rem;
     color: #B5179E;
-    background-image: linear-gradient(to bottom, #7209B7, #B5179E, #F72585);
-    text-shadow: 1px 1px 20px #B5179E80;
+    background-image: linear-gradient(to bottom, #F72585, #B5179E, #480CA8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -59,29 +58,24 @@ main #grup_butons button
     border-radius: 10px;
     border: 0;
     display: block;
-    margin: auto;
-}
-
-main #grup_butons button
-{
-    width: 120px;
-    height: 45px;
-    border-radius: 10px;
-    border: 0;
-    display: block;
     margin: 15px auto 0 auto;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 1.27rem;
+    box-shadow: 4px 5px 25px 0 #13013b;
 
-    background-color: #3A0CA3;
     color: #9dd7e9;
+    
+    opacity: 80%;
+    background-color: #3A0CA3;
+    transition: all .5s;
 }
 
 main #grup_butons button:hover
 {
-    background-color: #390ca3b0;
+    opacity: 100%;
+    box-shadow: 8px 10px 25px 0 #13013b;
 }
 
 main #grup_butons button:first-child
@@ -91,27 +85,28 @@ main #grup_butons button:first-child
 
 /* ----- CRIAR ----- */
 
-body #main_form
+body #main_criar
 {
     width: 300px;
+    height: 205px;
     text-align: left;
     padding-top: 20px;
     margin-top: 0;
 }
 
-body #main_form form
+body form
 {
     padding: 10px;
 }
 
-body #main_form form .item_form
+body form .item_form
 {
     width: 100%;
     position: relative;
     margin-top: 25px;
 }
 
-body #main_form form input
+body form input
 {
     display: block;
     width: 90%;
@@ -127,15 +122,20 @@ body #main_form form input
     color: #c9e4ec;
 }
 
-body #main_form form input:focus ~ label, body #main_form form input:valid ~ label
+body form input:focus ~ label, body #main_form form input:valid ~ label
 {
     top: -20px;
     color: #ffffff;
     font-size: 1.1rem;
-
+    left: 1px;
 }
 
-body #main_form form label
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+
+body form label
 {
     position: absolute;
     top: 6px;
@@ -155,6 +155,90 @@ body #main_form form label
     position: relative;
     top: 50px;
     margin-top: 0;
+    background-image: linear-gradient(to bottom, #C79400, #D5F917);
+}
+
+body form button
+{
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #b5d9e4;
+
+    border: 0;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, #F72585, #B5179E, #7209B7);
+    width: 100px;
+    height: 40px;
+    box-shadow: 4px 5px 20px 0 #41011e;
+    opacity: 80%;
+
+    transition: all .5s;
+}
+
+body form button:hover
+{
+    opacity: 100%;
+    box-shadow: 8px 10px 20px 0 #41011e;
+}
+
+body form .aux_button
+{
+    text-align: center;
+}
+
+/* ----- LISTAR ----- */
+
+body #main_listar
+{
+    width: 300px;
+    height: 350px;
+    text-align: left;
+    padding-top: 20px;
+    margin-top: 0;
+}
+
+body #main_listar::-webkit-scrollbar-track 
+{
+    margin: 30px 0 20px 0;
+}
+
+body #main_listar .lista
+{
+    overflow-y: auto;
+    margin-top: 25px;
+    height: 315px;
+}
+
+body .item_lista
+{
+    margin: 10px auto 0px auto;
+    width: 85%;
+    padding: 5px 0px 5px 15px;
+    position: relative;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.1rem;
+    color: #b5d9e4;
+
+    border: #F72585 outset 2px;
+}
+
+body .item_lista .sub_item
+{
+    text-overflow: ellipsis;  
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+
+body .item_lista span
+{
+    font-family: 'Roboto', sans-serif;
+    color: #f8cfe2;
 }
 
 @media(max-width: 380px) 
@@ -163,4 +247,15 @@ body #main_form form label
     {
         font-size: 4rem;
     }
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: #b30000; 
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover 
+{
+    background: #ff0000; 
 }
