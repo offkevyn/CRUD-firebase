@@ -1,13 +1,42 @@
-import { save } from './DAO.js';
+import {save, getTasks, onGetTasks} from './DAO.js';
 
-const form = document.getElementById("form_main");
+var path = window.location.pathname;
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+if(path == '/criar.html')
+{
+    const form = document.getElementById("form_main");
     
-    const nome = form['ipt_nome'];
-    const email = form['ipt_email'];
-    save(nome.value, email.value);
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const nome = form['ipt_nome'];
+        const email = form['ipt_email'];
+        save(nome.value, email.value);
+    
+        form.reset();
+    });
+} else if(path == '/listar.html')
+{
+}
+const listaItens = document.querySelector("#main_listar .lista");
 
-    form.reset();
+window.addEventListener('DOMContentLoaded', async () => {
+    const querySnapshot = await getTasks();
+
+    querySnapshot.forEach( doc => {
+        console.log(doc.data());
+        listaItens.innerHTML += 
+        `
+        <div class="item_lista">
+            <div class="sub_item">
+                <span>Nome:</span>
+                ` + doc.data().nome + `
+            </div>
+            <div class="sub_item">
+                <span>Email:</span>
+                ` + doc.data().email + `
+            </div>
+        </div>
+        `;
+    });
 });

@@ -12,12 +12,39 @@
     <h1>CRUD - Firebase</h1>
 
     <main>
-        <div id="grup_butons">
-            <button onclick="location.href='criar.html'">Criar</button>
-            <button onclick="location.href='listar.html'">Listar</button>
-            <button>Atualizar</button>
-            <button>Deletar</button>
+        <div>
+            <h1 class="titulo_crud">CRIAR</h1>
+            <div id="main_criar">
+                <form id="form_main" >
+                    <div class="item_form">
+                        <input id="ipt_nome" name="nome" type="text" required/>
+                        <label  for="ipt_nome">Nome: </label>
+                    </div>
+                    <div class="item_form">
+                        <input id="ipt_email" name="email" type="text" required/>
+                        <label for="ipt_email" >Email: </label>
+                    </div>
+                    <div class="aux_button">
+                        <button>Salvar</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
+        <div>
+            <h1 class="titulo_crud">LISTAR</h1>
+
+            <main id="main_listar">
+                <div class="lista">
+                    
+                </div>
+            </main>
+        </div>
+
     </main>
+    
+
+    <script type="module" src="DAO.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
