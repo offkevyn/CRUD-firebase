@@ -10,6 +10,38 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="fundo_popup">
+        <div class="popup" id="popup_editar">
+            <h1>EDITAR</h1>
+            <div class="item_form">
+                <input id="ipt_edit_nome" name="nome" type="text" required/>
+                <label  for="ipt_edit_nome">Nome: </label>
+            </div>
+            <div class="item_form">
+                <input id="ipt_edit_email" name="email" type="text" required/>
+                <label for="ipt_edit_email" >Email: </label>
+            </div>
+
+            <button id="btn_salvar_edit">Salvar</button>
+        </div>
+
+        <div class="popup" id="popup_deletar">
+            <h1>DELETAR</h1>
+
+            <div class="item_cofirm_deletar">
+                <div id="item_nome_deletar" class="sub_item">
+                    <span>Nome:</span>
+                    OffKevyn
+                </div>
+                <div id="item_email_deletar" class="sub_item">
+                    <span>Email:</span>
+                     kevyn@OffKevyn.com
+                </div>
+            </div>
+            <button id="btn_salvar_edit">Confirmar</button>
+        </div>
+    </div>
+
     <h1>CRUD - Firebase</h1>
 
     <main>
