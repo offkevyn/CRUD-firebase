@@ -255,12 +255,12 @@ body .item_lista .group_icons_acao .icon_acao:hover
     opacity: 80%;
 }
 
-body .item_lista .group_icons_acao .edit
+body .item_lista .group_icons_acao .editar
 {
     color: #FF9400;
 }
 
-body .item_lista .group_icons_acao .delete
+body .item_lista .group_icons_acao .deletar
 {
     color: #FD0006;
 }
@@ -270,7 +270,7 @@ body #fundo_popup
 {
     align-items: center;
     display: flex;
-    /* visibility: hidden; */
+    visibility: hidden;
 
     flex-direction: row;
     flex-wrap: wrap;
@@ -293,32 +293,64 @@ body #fundo_popup .popup
     border-radius: 10px;
     border: 1px solid rgba( 87, 11, 173, );
     width: 300px;
-    padding-right: 15px;
-    /* margin-left: -180vw;
-    margin-top: -150vh; */
+    margin-left: -180vw;
+    margin-top: -150vh;
 
     vertical-align: middle;
     transition: all .5s;
 }
 
-body #fundo_popup #popup_deletar
+body #fundo_popup .popup i
 {
-    padding-right: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 3.5rem;
+    margin-top: 10px;
 }
 
-body #fundo_popup #popup_editar
+body #fundo_popup .popup
 {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+}
+
+#fundo_popup .popup .item_cofirm_deletar
+{
+    padding: 5px 0px 15px 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+body #fundo_popup #popup_deletar h1, body #fundo_popup #popup_deletar i
+{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #fd0000, #f7415f);
+}
+
+body #fundo_popup #popup_editar input
+{
+    width: 85%;
+}
+
+body #fundo_popup #popup_editar .item_form
+{
+    margin-left: 4%;
+}
+
+body #fundo_popup #popup_editar h1, body #fundo_popup #popup_editar i
+{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #FF9400, #FF9400);
 }
 
 body #fundo_popup .popup h1
 {
     text-align: center;
-    background-image: linear-gradient(to bottom, #C79400, #D5F917);
-
-    margin-top: 20px;
-
-    font-size: 2.7rem;
+    margin-top: 0px;
+    font-size: 2.3rem;
 }
 
 body #fundo_popup .popup button
@@ -326,14 +358,8 @@ body #fundo_popup .popup button
     margin-bottom: 15px !important;
 }
 
-body #fundo_popup .popup div
+body #fundo_popup .popup
 {
-    margin-left: 5%;
-}
-
-body #fundo_popup .popup div
-{
-    color: #FBB334;
     font-family: 'Roboto Flex';
     font-weight: 300;
     font-size: 1rem;
@@ -350,12 +376,9 @@ body #fundo_popup .popup button
     margin-bottom: 25px;
 }
 
-#fundo_popup .popup .item_cofirm_deletar
-{
-    padding: 5px 0px 15px 0px;
-    margin: 0 auto;
-    margin-top: 20px;
-}
+/* ----- ABREVIAÇÃO ----- */
+
+
 
 /* ----- SCROLLBAR ----- */
 
