@@ -13,10 +13,17 @@ if(path == '/criar.html')
 const form = document.getElementById("form_main");  
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const nome = form['ipt_nome'];
-    const email = form['ipt_email'];
-    save(nome.value, email.value);
+
+    const fields = 
+    {
+        email: form['ipt_email'].value,
+        nome: form['ipt_nome'].value,
+        //dt_create: Date.now(),
+        dt_last_update: "", 
+
+    };
+
+    save(fields);
 
     form.reset();
 });
@@ -210,6 +217,7 @@ btn_confirm_deleta.addEventListener('click', async (e) =>
     const id_delelete = popup_deletar.dataset.id;
     if(id_delelete)
     {
+        ocultar_popup();
         try 
         {
             await deleteTask(id_delelete);
@@ -222,7 +230,6 @@ btn_confirm_deleta.addEventListener('click', async (e) =>
     {
         //Erro
     }
-    ocultar_popup();
 });
 
 //Editar
@@ -232,6 +239,7 @@ btn_salvar_edit.addEventListener('click', async (e) =>
     const id_edit = popup_editar.dataset.id;
     if(id_edit)
     {
+        ocultar_popup();
         try 
         {
             await updateTask(id_edit, 
@@ -248,5 +256,4 @@ btn_salvar_edit.addEventListener('click', async (e) =>
     {
         //Erro
     }
-    ocultar_popup();
 });
